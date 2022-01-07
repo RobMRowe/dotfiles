@@ -64,3 +64,19 @@ export BUNDLER_EDITOR="subl $@ >/dev/null 2>&1 -a"
 export BUNDLER_EDITOR="subl $@ >/dev/null 2>&1 -a"
 export BUNDLER_EDITOR="subl $@ >/dev/null 2>&1 -a"
 export BUNDLER_EDITOR="subl $@ >/dev/null 2>&1 -a"
+
+eval $(keychain --nogui --noask --eval --quiet id_ed25519 id_rsa ~/.keys/my_custom_key)
+
+function eac {
+local wineprefix="$HOME/.eac-prefix"
+local eacdir="${wineprefix}/drive_c/Program Files/Exact Audio Copy"
+pushd "${eacdir}/Microsoft.VC80.CRT"
+WINEPREFIX=$wineprefix WINEDEBUG=-all wine "${eacdir}/EAC.exe"
+popd
+}
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+export BUNDLER_EDITOR="subl $@ >/dev/null 2>&1 -a"
