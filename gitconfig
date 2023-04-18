@@ -50,8 +50,8 @@
 [pull]
   rebase = false
 [user]
-	email = robmrowe@pm.me
-	name = Robert Rowe
+	email = gizmo.hacker585@4wrd.cc
+	name = Rob Rowe
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
